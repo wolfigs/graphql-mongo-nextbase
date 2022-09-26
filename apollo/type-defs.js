@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+// const { gql } = require('apollo-server');
 
 export const typeDefs = gql`
   type User {
@@ -6,8 +7,24 @@ export const typeDefs = gql`
     name: String!
     status: String!
   }
+  
+  input UserInput {
+    name: String!
+    status: String!
+  }
+  
+  input EditUserInput {
+    name: String
+  }
 
   type Query {
-    viewer: User
+    viewer(ID: ID!): User!
+    getUsers: [User]
+  }
+  
+  type Mutation {
+    createUser(userInput: UserInput): User!
+    deleteUser(ID: ID!): Boolean
+    editRecipe(ID: ID!, editUserInput: EditUserInput): Boolean
   }
 `
