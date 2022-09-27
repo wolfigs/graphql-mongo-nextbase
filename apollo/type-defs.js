@@ -25,6 +25,6 @@ export const typeDefs = gql`
   type Mutation {
     createUser(userInput: UserInput): User!
     deleteUser(ID: ID!): Boolean
-    editRecipe(ID: ID!, editUserInput: EditUserInput): Boolean
+    editUser(ID: ID!, editUserInput: EditUserInput): Boolean
   }
 `
