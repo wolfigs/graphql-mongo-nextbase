@@ -1,8 +1,6 @@
 import { gql, useMutation } from '@apollo/client';
 import { useEffect } from 'react';
 
-
-
 // GQL
 
 const userInput = {
